@@ -29,20 +29,14 @@ int main(int argc, char *argv[])
 {
 
   info = (datashare*)malloc(sizeof(datashare));
-  info->message = "beefcake!";
+  info->message = "beefcake!1111111123456789012345xxx";
   info->USRLED = 1;
   if(pipe(pipe1))
     {
       fprintf(stderr, "pipe1 creation failed\n");
       return -1;
     }
-  
-  /*if(pipe(pipe2))
-    {
-      fprintf(stderr, "pipe2 creation failed\n");
-      return -1;
-      }*/
-  
+
   pthread_attr_init(&attr);
   int checking;
 
@@ -72,17 +66,7 @@ void *IPC_pipe1(void *param)
 {
   printf("entering thread1\n");
   int piperead;
-
-  //while(1)
-  //{
   piperead = write(pipe1[1],info->message, (strlen(info->message)+1));
-      //  if(piperead != 1)
-      //{
-      //  printf("writing\n");
-      //  exit(2);
-      //	}
-      //}
-
   printf("leaving thread1\n");
   
 }
@@ -91,22 +75,10 @@ void *IPC_pipe1(void *param)
 void *IPC_pipe2(void *param)
 {
   printf("entering thread2\n");
-  char input;
+  char *input;
+  input = (char*)malloc(sizeof(char)*32);
   int piperead;
-  int count = 0;
-  int size = strlen(info->message);
-  while(1)
-  {
-      piperead = read(pipe1[0],&(input),1);
-      count++;
-      if(count >= (size+1))
-      {
-        printf("reading\n");
-        break;
-      }
-      printf("input: %c\n", input);
-    }
+  piperead = read(pipe1[0],input,(strlen(info->message)+1));
+  printf("string: %s\n", input);
   printf("leaving thread2\n");
-
-
 }
