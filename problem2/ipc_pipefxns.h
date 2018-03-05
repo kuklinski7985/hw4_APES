@@ -1,13 +1,13 @@
 /**
-* @file ipcfxns.h
+* @file ipc_pipefxns.h
 * @brief protoytpe functions for homework4, IPC control
 * @author Andrew Kuklinski
 * @date 03/06/2018
 **/
 
 
-#ifndef ipcfxns_h_
-#define ipcfxns_h_
+#ifndef ipc_pipefxns_h_
+#define ipc_pipefxns_h_
 
 typedef struct datashare{
   int USRLED;
@@ -17,9 +17,12 @@ typedef struct datashare{
 
 #define MAXLENGTH   32
 
-void *IPC_pipe1(void *param);
+void *IPC_1(void *param);
 
-void *IPC_pipe2(void *param);
+void *IPC_2(void *param);
+
+int run_pipe();
 
 
-#endif /*__ipcfxns_h_*/
+
+#endif /*__ipc_pipefxns_h_*/

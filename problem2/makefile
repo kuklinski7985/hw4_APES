@@ -1,4 +1,4 @@
-SOURCES = hw4q2main.c ipcfxns.c
+SOURCES = main.c ipc_pipefxns.c ipc_socketfxns.c
 OBJS = $(SOURCES:.c=.o)
 IMP = $(SOURCES:.c=.i)
 INCLUDES = 
