@@ -1,5 +1,5 @@
 /**
-* @file ipc_pipefxns.h
+* @file ipc_shrmem.h
 * @brief protoytpe functions for homework4, IPC control
 * @author Andrew Kuklinski
 * @date 03/06/2018

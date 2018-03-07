@@ -1,5 +1,5 @@
 /**
-* @file ipc_pipefxns.c
+* @file ipc_shrmem.c
 * @brief  functions definitions for homework4, IPC control
 * @author Andrew Kuklinski
 * @date 03/06/2018

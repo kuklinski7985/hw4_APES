@@ -1,5 +1,5 @@
 /*Homework #4, question 2.
- *creating a pipe, socket, shared memory, and queue*/
+ *creating a IPC queue */
 
 #include <unistd.h>
 #include <stdio.h>

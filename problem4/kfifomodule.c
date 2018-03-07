@@ -1,3 +1,10 @@
+/**
+* @file kfifomodule.c
+* @brief module definitions for kfifo, hw4 question 4
+* @author Andrew Kuklinski
+* @date 03/06/2018
+**/
+
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>

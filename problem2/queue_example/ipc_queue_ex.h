@@ -1,13 +1,13 @@
 /**
-* @file ipc_pipefxns.h
+* @file ipc_queue_ex.h
 * @brief protoytpe functions for homework4, IPC control
 * @author Andrew Kuklinski
 * @date 03/06/2018
 **/
 
 
-#ifndef ipc_shrmem_h_
-#define ipc_shrmem_h_
+#ifndef ipc_queue_ex_h_
+#define ipc_queue_ex_h_
 
 typedef struct datashare{
   int USRLED;
@@ -26,4 +26,4 @@ int run_queue_ex();
 
 
 
-#endif /*__ipc_shrmem_h_*/
+#endif /*__ipc_queue_ex_h_*/

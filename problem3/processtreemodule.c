@@ -1,3 +1,11 @@
+/**
+* @file processtreemodule.c
+* @brief module definitions for evaluating the process tree hw4 question 3
+* @author Andrew Kuklinski
+* @date 03/06/2018
+**/
+
+
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>

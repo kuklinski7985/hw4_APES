@@ -1,5 +1,5 @@
 /**
-* @file ipcfxns.h
+* @file ipc_socketfxns.h
 * @brief protoytpe functions for homework4, IPC control
 * @author Andrew Kuklinski
 * @date 03/06/2018
