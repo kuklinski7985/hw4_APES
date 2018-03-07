@@ -9,10 +9,19 @@
 #ifndef ipc_socketfxns_h_
 #define ipc_socketfxns_h_
 
+typedef struct datashare{
+  int USRLED;
+  char * message;
+  int max_length;
+}datashare;
+
+#define MAXLENGTH   32
+
+void *IPC_1(void *param);
+
+void *IPC_2(void *param);
+
 int run_socket();
 
-void *IPC_socket1(void *param);
-
-void *IPC_socket2(void *param);
 
 #endif /*__ipc_socketfxns_h_*/

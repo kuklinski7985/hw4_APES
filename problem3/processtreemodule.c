@@ -3,6 +3,8 @@
 #include <linux/moduleparam.h>
 #include <linux/sched.h>
 #include <linux/sched/task.h>
+#include <linux/stat.h>
+#include <linux/init.h>
 
 static int input_pid = 1;
 
@@ -12,18 +14,23 @@ MODULE_PARM_DESC(input_pid, "input pid location to start process tree inspection
 static int __init processtreemodule_init(void)
 {
   struct task_struct * task;
+  struct task_struct * parent;
+  struct list_head children;
   int nicevalue;
-  long currentstate;
   
   printk(KERN_ALERT "Process Tree Evaluation Enter\n");
-
+  
   for(task = current; task != &init_task; task = task->parent)
     {
+      parent = task->parent;
+      children = task->children;
       nicevalue = task_nice(task);
-      printk(KERN_NOTICE "NAME: %s | PID: %d | NICE: %d | STATE: %ld", task->comm, task->pid,nicevalue,task->state);
+      printk(KERN_NOTICE "NAME: %s | PID: %d | NICE: %d | STATE: %ld",
+	     task->comm, task->pid,nicevalue,task->state);
     }
   nicevalue = task_nice(task);
-  printk(KERN_NOTICE "NAME: %s | PID: %d | NICE: %d | STATE: %ld", task->comm, task->pid,nicevalue,task->state);
+  printk(KERN_NOTICE "NAME: %s | PID: %d | NICE: %d | STATE: %ld",
+                     task->comm, task->pid,nicevalue,task->state);
   
   return 0;
 }

@@ -1,8 +1,8 @@
-SOURCES = main.c ipc_pipefxns.c ipc_socketfxns.c
+SOURCES = main.c ipc_socketfxns.c
 OBJS = $(SOURCES:.c=.o)
 IMP = $(SOURCES:.c=.i)
 INCLUDES = 
-CC = arm-linux-gnueabihf-gcc
+CC = gcc # arm-linux-gnueabihf-gcc
 #DEBUG = -g -Wall -Werror -O0 -pthread -lrt
 DEBUG = -pthread -lrt
 CPPFLAGS = 

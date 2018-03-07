@@ -6,8 +6,8 @@
 **/
 
 
-#ifndef ipc_pipefxns_h_
-#define ipc_pipefxns_h_
+#ifndef ipc_shrmem_h_
+#define ipc_shrmem_h_
 
 typedef struct datashare{
   int USRLED;
@@ -21,8 +21,8 @@ void *IPC_1(void *param);
 
 void *IPC_2(void *param);
 
-int run_pipe();
+int run_shrmem();
 
 
 
-#endif /*__ipc_pipefxns_h_*/
+#endif /*__ipc_shrmem_h_*/
